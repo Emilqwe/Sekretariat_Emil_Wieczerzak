@@ -34,7 +34,7 @@
                     <RadioButton Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87"/>
                     <RadioButton Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71"/>
                     <Button Content="Dodaj Zdjęcie" HorizontalAlignment="Left" Height="37" Margin="39,462,0,0" VerticalAlignment="Top" Width="162"/>
-                    <ListBox HorizontalAlignment="Left" Height="30" Margin="644,469,0,0" VerticalAlignment="Top" Width="160">
+                    <ListBox HorizontalAlignment="Left" Height="26" Margin="640,468,0,0" VerticalAlignment="Top" Width="160">
                         <ListBoxItem Content="Brak"/>
                         <ListBoxItem Content="Zajęcia Sportowe"/>
                         <ListBoxItem Content="Zajęcia muzyczne"/>
@@ -153,7 +153,17 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Główne menu" Margin="-2,-2,-2,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <TabControl>
+                        <TabItem Header="Lista Nauczycieli">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="Lista Uczniów"/>
+                        <TabItem Header="Lista Pracowników Szkoły">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
         </TabControl>
 
