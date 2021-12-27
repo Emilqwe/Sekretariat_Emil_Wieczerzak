@@ -31,8 +31,8 @@
                     <TextBox x:Name="UczenNazwiskoP" HorizontalAlignment="Left" Margin="640,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
                     <DatePicker x:Name="UczenDataUro" HorizontalAlignment="Left" Margin="39,304,0,0" VerticalAlignment="Top" Width="162"/>
                     <TextBox x:Name="UczenPesel" HorizontalAlignment="Left" Margin="39,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
-                    <RadioButton x:Name="UczenM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87"/>
-                    <RadioButton x:Name="UczenK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71"/>
+                    <RadioButton x:Name="UczenM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87" />
+                    <RadioButton x:Name="UczenK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" />
                     <Button x:Name="UczenDodZdj" Content="Dodaj Zdjęcie" HorizontalAlignment="Left" Height="37" Margin="39,462,0,0" VerticalAlignment="Top" Width="162"/>
                     <ListBox x:Name="UczenZajecia" HorizontalAlignment="Left" Height="26" Margin="640,468,0,0" VerticalAlignment="Top" Width="160">
                         <ListBoxItem Content="Brak"/>
@@ -77,8 +77,8 @@
                         <TextBox x:Name="NauczycielNazwiskoP" HorizontalAlignment="Left" Margin="640,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
                         <DatePicker x:Name="NauczycielDataUro" HorizontalAlignment="Left" Margin="39,304,0,0" VerticalAlignment="Top" Width="162"/>
                         <TextBox x:Name="NauczycielPesel" HorizontalAlignment="Left" Margin="39,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
-                        <RadioButton x:Name="NauczycielM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87"/>
-                        <RadioButton x:Name="NauczycielK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71"/>
+                        <RadioButton x:Name="NauczycielM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87" />
+                        <RadioButton x:Name="NauczycielK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" />
                         <Button x:Name="NauczycielDodajZdj" Content="Dodaj Zdjęcie" HorizontalAlignment="Left" Height="37" Margin="39,462,0,0" VerticalAlignment="Top" Width="162"/>
                         <Label Content="Wychowawstwo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="611,343,0,0"/>
                         <DatePicker x:Name="NauczycielDataZatr" HorizontalAlignment="Left" Margin="39,557,0,0" VerticalAlignment="Top" Width="162"/>
@@ -136,8 +136,8 @@
                         <TextBox x:Name="PracownikNazwiskoP" HorizontalAlignment="Left" Margin="640,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
                         <DatePicker x:Name="PracownikDataUro" HorizontalAlignment="Left" Margin="39,304,0,0" VerticalAlignment="Top" Width="162"/>
                         <TextBox x:Name="PracownikPesel" HorizontalAlignment="Left" Margin="39,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
-                        <RadioButton x:Name="PracownikM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87"/>
-                        <RadioButton x:Name="PracownikK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71"/>
+                        <RadioButton x:Name="PracownikM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="640,309,0,0" VerticalAlignment="Top" Width="87" Checked="PracownikM_Checked" Unchecked="PracownikM_Checked"/>
+                        <RadioButton x:Name="PracownikK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" Checked="PracownikK_Checked" Unchecked="PracownikK_Checked"/>
                         <Button x:Name="PracownikDodajZdj" Content="Dodaj Zdjęcie" HorizontalAlignment="Left" Height="37" Margin="39,462,0,0" VerticalAlignment="Top" Width="162"/>
                         <ListBox x:Name="PracownikEtat" HorizontalAlignment="Left" Height="28" Margin="640,386,0,0" VerticalAlignment="Top" Width="160">
                             <ListBoxItem Content="Ćwierć etatu" Height="25"/>
@@ -151,7 +151,7 @@
                         </ListBox>
                         <Label Content="Data zatrudnienia:" HorizontalAlignment="Left" Margin="10,537,0,0" VerticalAlignment="Top"/>
                         <DatePicker x:Name="PracownikDataZatr" HorizontalAlignment="Left" Margin="40,580,0,0" VerticalAlignment="Top" Width="162"/>
-                        <Button x:Name="PracownikPrzeslijDane" Content="Prześlij dane" HorizontalAlignment="Left" Height="59" Margin="641,550,0,0" VerticalAlignment="Top" Width="163"/>
+                        <Button x:Name="PracownikPrzeslijDane" Content="Prześlij dane" HorizontalAlignment="Left" Height="59" Margin="641,550,0,0" VerticalAlignment="Top" Width="163" Click="PracownikPrzeslijDane_Click"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -209,6 +209,19 @@
                                     <Label Content="Zdjęcie" HorizontalAlignment="Left" Height="26" Margin="886,10,0,0" VerticalAlignment="Top" Width="91"/>
                                     <Label Content="Stanowisko" HorizontalAlignment="Left" Height="26" Margin="982,10,0,0" VerticalAlignment="Top" Width="111"/>
                                     <Label Content="Data zatrudnienia" HorizontalAlignment="Left" Height="26" Margin="1111,10,0,0" VerticalAlignment="Top" Width="108"/>
+                                    <Label x:Name="WysImiePrac" Content="" HorizontalAlignment="Left" Height="576" Margin="10,36,0,0" VerticalAlignment="Top" Width="69"/>
+                                    <Label x:Name="WysDrugieImiePrac" Content="" HorizontalAlignment="Left" Height="576" Margin="84,36,0,0" VerticalAlignment="Top" Width="84"/>
+                                    <Label x:Name="WysNazwPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="173,36,0,0" VerticalAlignment="Top" Width="81"/>
+                                    <Label x:Name="WysNazwPanPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="254,36,0,0" VerticalAlignment="Top" Width="119"/>
+                                    <Label x:Name="WysImieOjcaPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="378,36,0,0" VerticalAlignment="Top" Width="85"/>
+                                    <Label x:Name="WysImieMatkiPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="463,36,0,0" VerticalAlignment="Top" Width="82"/>
+                                    <Label x:Name="WysDataUroPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="545,36,0,0" VerticalAlignment="Top" Width="91"/>
+                                    <Label x:Name="WysPlecPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="636,36,0,0" VerticalAlignment="Top" Width="82"/>
+                                    <Label x:Name="WysPeselPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="718,36,0,0" VerticalAlignment="Top" Width="80"/>
+                                    <Label x:Name="WysEtat" Content="" HorizontalAlignment="Left" Height="576" Margin="798,36,0,0" VerticalAlignment="Top" Width="83"/>
+                                    <Label x:Name="WysZdjPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="886,36,0,0" VerticalAlignment="Top" Width="91"/>
+                                    <Label x:Name="WysStanowisko" Content="" HorizontalAlignment="Left" Height="576" Margin="982,36,0,0" VerticalAlignment="Top" Width="124"/>
+                                    <Label x:Name="WysDataZatrPrac" Content="" HorizontalAlignment="Left" Height="576" Margin="1111,36,0,0" VerticalAlignment="Top" Width="127"/>
                                 </Grid>
                             </Grid>
                         </TabItem>

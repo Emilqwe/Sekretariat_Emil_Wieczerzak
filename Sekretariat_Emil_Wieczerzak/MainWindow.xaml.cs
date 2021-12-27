@@ -47,5 +47,38 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             InitializeComponent();
         }
+
+        private void PracownikK_Checked(object sender, RoutedEventArgs e)
+        {
+            if (PracownikK.IsChecked == true)
+            {
+                WysPlecPrac.Content = WysImiePrac.Content + "\n" + PracownikK.Content;
+            }
+        }
+
+        private void PracownikM_Checked(object sender, RoutedEventArgs e)
+        {
+            if (PracownikM.IsChecked == true)
+            {
+                WysPlecPrac.Content = WysImiePrac.Content + "\n" + PracownikM.Content;
+            }
+        }
+
+        private void PracownikPrzeslijDane_Click(object sender, RoutedEventArgs e)
+        {
+            WysImiePrac.Content = WysImiePrac.Content + "\n" + PracownikImie.Text;
+            WysDrugieImiePrac.Content = WysDrugieImiePrac.Content + "\n" + PracownikDrugieImie.Text;
+            WysNazwPrac.Content = WysNazwPrac.Content + "\n" + PracownikNazwisko.Text;
+            WysNazwPanPrac.Content = WysNazwPanPrac.Content + "\n" + PracownikNazwiskoP.Text;
+            WysImieOjcaPrac.Content = WysImieOjcaPrac.Content + "\n" + PracownikImieOjca.Text;
+            WysImieMatkiPrac.Content = WysImieMatkiPrac.Content + "\n" + PracownikImieMatki.Text;
+            WysDataUroPrac.Content = WysDataUroPrac.Content + "\n" + PracownikDataUro.SelectedDate;
+            WysPeselPrac.Content = WysPeselPrac.Content + "\n" + PracownikPesel.Text;
+            WysEtat.Content = WysEtat.Content + "\n" + PracownikEtat.SelectedItem;
+            WysZdjPrac.Content = WysZdjPrac.Content + "\n" + PracownikImie.Text;
+            WysStanowisko.Content = WysStanowisko.Content + "\n" + PracownikStanowisko.SelectedItem;
+            WysDataZatrPrac.Content = WysDataZatrPrac.Content + "\n" + PracownikDataZatr.SelectedDate;
+
+        }
     }
 }
