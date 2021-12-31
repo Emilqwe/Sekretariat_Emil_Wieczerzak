@@ -31,10 +31,10 @@
                     <TextBox x:Name="UczenNazwiskoP" HorizontalAlignment="Left" Margin="640,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
                     <DatePicker x:Name="UczenDataUro" HorizontalAlignment="Left" Margin="39,304,0,0" VerticalAlignment="Top" Width="162"/>
                     <TextBox x:Name="UczenPesel" HorizontalAlignment="Left" Margin="39,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
-                    <RadioButton x:Name="UczenM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87" />
-                    <RadioButton x:Name="UczenK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" />
+                    <RadioButton x:Name="UczenM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87" Checked="UczenM_Checked" Unchecked="UczenM_Checked"/>
+                    <RadioButton x:Name="UczenK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" Checked="UczenM_Checked" Unchecked="UczenM_Checked"/>
                     <Button x:Name="UczenDodZdj" Content="Dodaj Zdjęcie" HorizontalAlignment="Left" Height="37" Margin="39,462,0,0" VerticalAlignment="Top" Width="162"/>
-                    <ListBox x:Name="UczenZajecia" HorizontalAlignment="Left" Height="26" Margin="640,468,0,0" VerticalAlignment="Top" Width="160">
+                    <ListBox x:Name="UczenZajPoz" HorizontalAlignment="Left" Height="26" Margin="640,468,0,0" VerticalAlignment="Top" Width="160">
                         <ListBoxItem Content="Brak"/>
                         <ListBoxItem Content="Zajęcia Sportowe"/>
                         <ListBoxItem Content="Zajęcia muzyczne"/>
@@ -77,14 +77,14 @@
                         <TextBox x:Name="NauczycielNazwiskoP" HorizontalAlignment="Left" Margin="640,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
                         <DatePicker x:Name="NauczycielDataUro" HorizontalAlignment="Left" Margin="39,304,0,0" VerticalAlignment="Top" Width="162"/>
                         <TextBox x:Name="NauczycielPesel" HorizontalAlignment="Left" Margin="39,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
-                        <RadioButton x:Name="NauczycielM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87" />
-                        <RadioButton x:Name="NauczycielK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" />
+                        <RadioButton x:Name="NauczycielM" Content="Mężczyzna" HorizontalAlignment="Left" Margin="641,309,0,0" VerticalAlignment="Top" Width="87" Checked="NauczycielM_Checked" Unchecked="NauczycielM_Checked"/>
+                        <RadioButton x:Name="NauczycielK" Content="Kobieta" HorizontalAlignment="Left" Margin="733,309,0,0" VerticalAlignment="Top" Width="71" Checked="NauczycielM_Checked" Unchecked="NauczycielM_Checked"/>
                         <Button x:Name="NauczycielDodajZdj" Content="Dodaj Zdjęcie" HorizontalAlignment="Left" Height="37" Margin="39,462,0,0" VerticalAlignment="Top" Width="162"/>
                         <Label Content="Wychowawstwo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="611,343,0,0"/>
                         <DatePicker x:Name="NauczycielDataZatr" HorizontalAlignment="Left" Margin="39,557,0,0" VerticalAlignment="Top" Width="162"/>
                         <Label Content="Data zatrudnienia:" HorizontalAlignment="Left" Margin="10,516,0,0" VerticalAlignment="Top"/>
                         <Label Content="Przedmioty nauczania:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="610,431,0,0"/>
-                        <ListBox x:Name="NauczycielPrzedmiotNaucz" HorizontalAlignment="Left" Height="30" Margin="644,469,0,0" VerticalAlignment="Top" Width="160">
+                        <ListBox x:Name="NauczycielPrzedNaucz" HorizontalAlignment="Left" Height="30" Margin="644,469,0,0" VerticalAlignment="Top" Width="160">
                             <ListBoxItem Content="Matematyka" Height="26"/>
                             <ListBoxItem Content="Język Polski"/>
                             <ListBoxItem Content="Język Angielski"/>
@@ -98,7 +98,7 @@
                             <ListBoxItem Content="Wiedza o społeczeństwie"/>
                             <ListBoxItem Content="Wychowanie Fizyczne"/>
                         </ListBox>
-                        <ListBox x:Name="NauczycielWychowawstwo" HorizontalAlignment="Left" Height="25" Margin="640,389,0,0" VerticalAlignment="Top" Width="160">
+                        <ListBox x:Name="NauczycielWychow" HorizontalAlignment="Left" Height="25" Margin="640,389,0,0" VerticalAlignment="Top" Width="160">
                             <ListBoxItem Content="1 A"/>
                             <ListBoxItem Content="1 B"/>
                             <ListBoxItem Content="1C"/>
@@ -109,7 +109,7 @@
                             <ListBoxItem Content="3B"/>
                             <ListBoxItem Content="3C"/>
                         </ListBox>
-                        <Button x:Name="NauczycielPrzeslijDane" Content="Prześlij dane" HorizontalAlignment="Left" Height="59" Margin="641,550,0,0" VerticalAlignment="Top" Width="163"/>
+                        <Button x:Name="NauczycielPrzeslijDane" Content="Prześlij dane" HorizontalAlignment="Left" Height="59" Margin="641,550,0,0" VerticalAlignment="Top" Width="163" Click="NauczycielPrzeslijDane_Click"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -172,6 +172,32 @@
                                 <Label Content="Klasa" HorizontalAlignment="Left" Height="26" Margin="896,10,0,0" VerticalAlignment="Top" Width="91"/>
                                 <Label Content="Zdjęcie" HorizontalAlignment="Left" Height="26" Margin="992,10,0,0" VerticalAlignment="Top" Width="91"/>
                                 <Label Content="Zajęcia pozalekcyjne" HorizontalAlignment="Left" Height="26" Margin="1088,10,0,0" VerticalAlignment="Top" Width="150"/>
+                                <Grid Background="#FFE5E5E5">
+                                    <Label Content="Imię" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="69"/>
+                                    <Label Content="Drugie imię" HorizontalAlignment="Left" Height="26" Margin="84,10,0,0" VerticalAlignment="Top" Width="84"/>
+                                    <Label Content="Nazwisko" HorizontalAlignment="Left" Height="26" Margin="173,10,0,0" VerticalAlignment="Top" Width="76"/>
+                                    <Label Content="Nazwisko panieńskie" HorizontalAlignment="Left" Height="26" Margin="254,10,0,0" VerticalAlignment="Top" Width="119"/>
+                                    <Label Content="Imię ojca" HorizontalAlignment="Left" Height="26" Margin="378,10,0,0" VerticalAlignment="Top" Width="80"/>
+                                    <Label Content="Imię matki" HorizontalAlignment="Left" Height="26" Margin="463,10,0,0" VerticalAlignment="Top" Width="77"/>
+                                    <Label Content="Data urodzenia" HorizontalAlignment="Left" Height="26" Margin="545,10,0,0" VerticalAlignment="Top" Width="91"/>
+                                    <Label Content="Płeć" HorizontalAlignment="Left" Height="26" Margin="641,10,0,0" VerticalAlignment="Top" Width="72"/>
+                                    <Label Content="PESEL" HorizontalAlignment="Left" Height="26" Margin="718,10,0,0" VerticalAlignment="Top" Width="126"/>
+                                    <Label Content="Klasa" HorizontalAlignment="Left" Height="26" Margin="852,10,0,0" VerticalAlignment="Top" Width="78"/>
+                                    <Label Content="Zdjęcie" HorizontalAlignment="Left" Height="26" Margin="937,10,0,0" VerticalAlignment="Top" Width="146"/>
+                                    <Label Content="Zajęcia Pozalekcyjne" HorizontalAlignment="Left" Height="26" Margin="1091,10,0,0" VerticalAlignment="Top" Width="152"/>
+                                    <Label x:Name="WysImieUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="10,36,0,0" VerticalAlignment="Top" Width="69"/>
+                                    <Label x:Name="WysDrugieImieUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="84,36,0,0" VerticalAlignment="Top" Width="84"/>
+                                    <Label x:Name="WysNazwUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="173,36,0,0" VerticalAlignment="Top" Width="81"/>
+                                    <Label x:Name="WysNazwPanUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="254,36,0,0" VerticalAlignment="Top" Width="119"/>
+                                    <Label x:Name="WysImieOjcaUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="378,36,0,0" VerticalAlignment="Top" Width="85"/>
+                                    <Label x:Name="WysImieMatkiUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="463,36,0,0" VerticalAlignment="Top" Width="82"/>
+                                    <Label x:Name="WysDataUroUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="545,36,0,0" VerticalAlignment="Top" Width="91"/>
+                                    <Label x:Name="WysPlecUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="636,36,0,0" VerticalAlignment="Top" Width="82"/>
+                                    <Label x:Name="WysPeselUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="718,36,0,0" VerticalAlignment="Top" Width="126"/>
+                                    <Label x:Name="WysKlasa" Content="" HorizontalAlignment="Left" Height="576" Margin="849,36,0,0" VerticalAlignment="Top" Width="83"/>
+                                    <Label x:Name="WysZdjUcznia" Content="" HorizontalAlignment="Left" Height="576" Margin="937,36,0,0" VerticalAlignment="Top" Width="146"/>
+                                    <Label x:Name="WysZajPoz" Content="" HorizontalAlignment="Left" Height="576" Margin="1088,36,0,0" VerticalAlignment="Top" Width="155"/>
+                                </Grid>
                             </Grid>
                         </TabItem>
                         <TabItem Header="Lista Nauczycieli">
@@ -190,6 +216,34 @@
                                     <Label Content="Zdjęcie" HorizontalAlignment="Left" Height="26" Margin="904,10,0,0" VerticalAlignment="Top" Width="91"/>
                                     <Label Content="Przedmioty nauczania" HorizontalAlignment="Left" Height="26" Margin="1000,10,0,0" VerticalAlignment="Top" Width="125"/>
                                     <Label Content="Data zatrudnienia" HorizontalAlignment="Left" Height="26" Margin="1130,10,0,0" VerticalAlignment="Top" Width="108"/>
+                                    <Grid Background="#FFE5E5E5">
+                                        <Label Content="Imię" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="69"/>
+                                        <Label Content="Drugie imię" HorizontalAlignment="Left" Height="26" Margin="84,10,0,0" VerticalAlignment="Top" Width="84"/>
+                                        <Label Content="Nazwisko" HorizontalAlignment="Left" Height="26" Margin="173,10,0,0" VerticalAlignment="Top" Width="76"/>
+                                        <Label Content="Nazwisko panieńskie" HorizontalAlignment="Left" Height="26" Margin="254,10,0,0" VerticalAlignment="Top" Width="119"/>
+                                        <Label Content="Imię ojca" HorizontalAlignment="Left" Height="26" Margin="378,10,0,0" VerticalAlignment="Top" Width="80"/>
+                                        <Label Content="Imię matki" HorizontalAlignment="Left" Height="26" Margin="463,10,0,0" VerticalAlignment="Top" Width="77"/>
+                                        <Label Content="Data urodzenia" HorizontalAlignment="Left" Height="26" Margin="545,10,0,0" VerticalAlignment="Top" Width="91"/>
+                                        <Label Content="Płeć" HorizontalAlignment="Left" Height="26" Margin="641,10,0,0" VerticalAlignment="Top" Width="72"/>
+                                        <Label Content="PESEL" HorizontalAlignment="Left" Height="26" Margin="718,10,0,0" VerticalAlignment="Top" Width="80"/>
+                                        <Label Content="Wychowawstwo" HorizontalAlignment="Left" Height="26" Margin="803,10,0,0" VerticalAlignment="Top" Width="78"/>
+                                        <Label Content="Zdjęcie" HorizontalAlignment="Left" Height="26" Margin="886,10,0,0" VerticalAlignment="Top" Width="91"/>
+                                        <Label Content="Przedmioty nauczania" HorizontalAlignment="Left" Height="26" Margin="982,10,0,0" VerticalAlignment="Top" Width="111"/>
+                                        <Label Content="Data zatrudnienia" HorizontalAlignment="Left" Height="26" Margin="1111,10,0,0" VerticalAlignment="Top" Width="108"/>
+                                        <Label x:Name="WysImieNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="10,36,0,0" VerticalAlignment="Top" Width="69"/>
+                                        <Label x:Name="WysDrugieImieNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="84,36,0,0" VerticalAlignment="Top" Width="84"/>
+                                        <Label x:Name="WysNazwNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="173,36,0,0" VerticalAlignment="Top" Width="81"/>
+                                        <Label x:Name="WysNazwPanNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="254,36,0,0" VerticalAlignment="Top" Width="119"/>
+                                        <Label x:Name="WysImieOjcaNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="378,36,0,0" VerticalAlignment="Top" Width="85"/>
+                                        <Label x:Name="WysImieMatkiNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="463,36,0,0" VerticalAlignment="Top" Width="82"/>
+                                        <Label x:Name="WysDataUroNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="545,36,0,0" VerticalAlignment="Top" Width="91"/>
+                                        <Label x:Name="WysPlecNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="636,36,0,0" VerticalAlignment="Top" Width="82"/>
+                                        <Label x:Name="WysPeselNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="718,36,0,0" VerticalAlignment="Top" Width="80"/>
+                                        <Label x:Name="WysWychow" Content="" HorizontalAlignment="Left" Height="576" Margin="798,36,0,0" VerticalAlignment="Top" Width="83"/>
+                                        <Label x:Name="WysZdjNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="886,36,0,0" VerticalAlignment="Top" Width="91"/>
+                                        <Label x:Name="WysPrzedNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="982,36,0,0" VerticalAlignment="Top" Width="124"/>
+                                        <Label x:Name="WysDataZatrNaucz" Content="" HorizontalAlignment="Left" Height="576" Margin="1111,36,0,0" VerticalAlignment="Top" Width="127"/>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </TabItem>
