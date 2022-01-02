@@ -52,7 +52,7 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             if (PracownikK.IsChecked == true)
             {
-                WysPlecPrac.Content = WysImiePrac.Content + "\n" + PracownikK.Content;
+                WysPlecPrac.Content = WysPlecPrac.Content + "\n" + PracownikK.Content;
             }
         }
 
@@ -60,7 +60,7 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             if (PracownikM.IsChecked == true)
             {
-                WysPlecPrac.Content = WysImiePrac.Content + "\n" + PracownikM.Content;
+                WysPlecPrac.Content = WysPlecPrac.Content + "\n" + PracownikM.Content;
             }
         }
 
@@ -68,7 +68,7 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             if (UczenK.IsChecked == true)
             {
-                WysPlecPrac.Content = WysImiePrac.Content + "\n" + UczenK.Content;
+                WysPlecUcznia.Content = WysPlecUcznia.Content + "\n" + UczenK.Content;
             }
         }
 
@@ -76,7 +76,7 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             if (UczenM.IsChecked == true)
             {
-                WysPlecPrac.Content = WysImiePrac.Content + "\n" + UczenM.Content;
+                WysPlecUcznia.Content = WysPlecUcznia.Content + "\n" + UczenM.Content;
             }
         }
 
@@ -84,7 +84,7 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             if (NauczycielK.IsChecked == true)
             {
-                WysPlecPrac.Content = WysImiePrac.Content + "\n" + NauczycielK.Content;
+                WysPlecNaucz.Content = WysPlecNaucz.Content + "\n" + NauczycielK.Content;
             }
         }
 
@@ -92,7 +92,7 @@ namespace Sekretariat_Emil_Wieczerzak
         {
             if (NauczycielM.IsChecked == true)
             {
-                WysPlecPrac.Content = WysImiePrac.Content + "\n" + NauczycielM.Content;
+                WysPlecNaucz.Content = WysPlecNaucz.Content + "\n" + NauczycielM.Content;
             }
         }
 
@@ -123,9 +123,8 @@ namespace Sekretariat_Emil_Wieczerzak
             WysImieMatkiUcznia.Content = WysImieMatkiUcznia.Content + "\n" + UczenImieMatki.Text;
             WysDataUroUcznia.Content = WysDataUroUcznia.Content + "\n" + UczenDataUro.SelectedDate;
             WysPeselUcznia.Content = WysPeselUcznia.Content + "\n" + UczenPesel.Text;
-            WysKlasa.Content = WysKlasa.Content + "\n" + UczenKlasa.SelectedItem;
-            WysZdjUcznia.Content = WysZdjUcznia.Content + "\n" + UczenImie.Text;
-            WysZajPoz.Content = WysZajPoz.Content + "\n" + UczenZajPoz.SelectedItem;
+            WysZdjUcznia.Content = WysZdjNaucz.Content + "\n" + UczenImie.Text;
+
         }
 
         private void NauczycielPrzeslijDane_Click(object sender, RoutedEventArgs e)
